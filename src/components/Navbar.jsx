@@ -1,12 +1,13 @@
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Wallet, LayoutDashboard, PlusCircle, User, Sun, Moon } from 'lucide-react';
+import { Wallet, LayoutDashboard, PlusCircle, BarChart3, User, Sun, Moon } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
 
 const navLinks = [
   { to: '/', icon: LayoutDashboard, label: 'Dashboard' },
   { to: '/add', icon: PlusCircle, label: 'Add Transaction' },
+  { to: '/analytics', icon: BarChart3, label: 'Analytics' },
   { to: '/profile', icon: User, label: 'Profile' },
 ];
 
@@ -56,14 +57,6 @@ export default function Navbar() {
             >
               {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
-
-            {user && (
-              <div className="hidden sm:flex items-center gap-2 pl-2 ml-2 border-l border-slate-200 dark:border-slate-700">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-400 to-emerald-500 flex items-center justify-center text-white text-xs font-bold">
-                  {user.email?.[0]?.toUpperCase() || 'U'}
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </nav>

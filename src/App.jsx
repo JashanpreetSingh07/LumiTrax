@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import AddTransaction from './pages/AddTransaction';
+import Analytics from './pages/Analytics';
 import Profile from './pages/Profile';
 
 function ProtectedRoute({ children }) {
@@ -86,6 +87,16 @@ function AppRoutes() {
                 <ProtectedRoute>
                   <Layout>
                     <AddTransaction />
+                  </Layout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/analytics"
+              element={
+                <ProtectedRoute>
+                  <Layout>
+                    <Analytics />
                   </Layout>
                 </ProtectedRoute>
               }
